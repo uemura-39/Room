@@ -17,7 +17,9 @@
       </div>
       <%= simple_format(post.text) %>
       <span class="name">
-        <%= post.name %>
+        <a href="/users/<%= post.user.id %>">
+          <span>投稿者</span><%= post.user.nickname %>
+        </a>
       </span>
     </div>
   <% end %>
