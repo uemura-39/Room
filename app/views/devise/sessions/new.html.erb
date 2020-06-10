@@ -19,7 +19,7 @@
           <%= f.check_box :remember_me %>
         </div>
       <% end -%>
-
+      <%= link_to 'かんたんログイン', users_guest_sign_in_path, method: :post %>
       <div class="actions">
         <%= f.submit "Log in" %>
       </div>
