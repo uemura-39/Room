@@ -1,0 +1,38 @@
+.header {
+  height: 100px;
+  width: 100%;
+  background-color: #FF3333	;
+  position: fixed; 
+  top: 0px; 
+  &__contents {
+    width: 70%;
+    height: 70%;
+    margin: 0 auto;
+    margin-top: 15px;
+    position: relative;
+    }
+  
+  &__title {
+    position: absolute;
+    margin-top: 10px;
+    &--text {
+      text-decoration: none ;
+      color: white;
+      font-size: 35px;
+    }
+  }
+  &__contents--left {
+    position: absolute;
+    left: 830px;
+    font-size: 20px;
+    margin-top: 20px;
+    
+  }
+  &--post {
+    text-decoration: none ;
+    color: white;
+    margin-right: 10px;
+    
+  }
+}
+
