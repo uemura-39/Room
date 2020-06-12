@@ -33,8 +33,9 @@
         </div>
         <% if user_signed_in? %>
           <div class="header__contents--left">
-            <%= link_to  "投稿する", "/posts/new", class: "header--post" %>
+            <%= link_to  "新規投稿", "/posts/new", class: "header--post" %>
             <span><%= link_to current_user.nickname, user_path(current_user), class: "header--post"%>
+            <%# <%= link_to "ログアウト", destroy_user_session_path, class:'header--post', method: :delete %> 
             </span>
             
           </div>
