@@ -25,7 +25,11 @@
     <header class="header">
       <div class="header__contents">
         <div class="header__title">
-        <%= link_to "Room", '/posts', class: "header__title--text"%>
+          <%= link_to "Room", '/posts', class: "header__title--text"%>
+          <%# <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form| %>
+          <%# <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+          <%# <%= form.submit "検索", class: "search-btn" %>
+          <%# <% end %>
         </div>
         <% if user_signed_in? %>
           <div class="header__contents--left">
