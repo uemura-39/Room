@@ -1,34 +1,34 @@
 <div class="contents row">
   <div class="container">
-    <h2>新規ユーザー登録</h2>
+    <h2 class="form__title">新規ユーザー登録</h2>
     <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <%= devise_error_messages! %>
 
       <div class="field">
-        <%= f.label :nickname,'ユーザー名（6文字以内）'%> <br/>
-        <%= f.text_field :nickname, autofocus: true, maxlength: "6" %>
+        <%= f.label :nickname,'ユーザー名（6文字以内）',class: 'field__title'%> <br/>
+        <%= f.text_field :nickname, autofocus: true, maxlength: "6", class: 'field__text' %>
       </div>
 
       <div class="field">
-        <%= f.label :email,'メールアドレス' %><br />
-        <%= f.email_field :email %>
+        <%= f.label :email,'メールアドレス',class: 'field__title' %><br />
+        <%= f.email_field :email, class: 'field__text'%>
       </div>
 
       <div class="field">
-        <%= f.label :password,'パスワード' %>
+        <%= f.label :password,'パスワード',class: 'field__title' %>
         <% if @validatable %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+        <%= f.password_field :password, autocomplete: "off", class: 'field__text' %>
       </div>
 
       <div class="field">
-        <%= f.label :password_confirmation, '確認用パスワード' %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        <%= f.label :password_confirmation, '確認用パスワード',class: 'field__title' %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: 'field__text' %>
       </div>
 
       <div class="actions">
-        <%= f.submit "新規登録" %>
+        <%= f.submit "新規登録", class: 'btn' %>
       </div>
     <% end %>
   </div>

@@ -1,0 +1,63 @@
+.containerv{
+  background-color: white;
+  width: 100px;
+  height: 100vh;
+  
+}
+.form__title {
+  font-weight: bold;;
+  font-size: 35px;
+  padding-top: 15px;
+}
+
+.new_user {
+  padding-top: 30px; 
+  font-size: 20px;
+  position: relative;
+  // background-color: beige;
+  width: 30%;
+  margin: 0 auto;
+}
+.field {
+  margin: 25px 0;
+  &__title {
+    font-size: 25px;
+  }
+  &__text {
+    border-radius:10px;
+    width: 20rem;
+    border: 3rem;
+  }
+}
+.btn {
+  height: 50px;
+  width: 100px;
+  background-color: #df4545;
+  color: white;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  &:hover {
+    color:white;
+    background-color: red;
+  }
+
+}
+.easy-log {
+margin-top: 20px;
+}
+.e-btn {
+  height: 100px;
+  width: 100px;
+  background-color: #df4545;
+  color: white;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  &:hover {
+    color:white;
+    background-color: red;
+  }
+}

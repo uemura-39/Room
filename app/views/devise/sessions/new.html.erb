@@ -1,16 +1,16 @@
 <div class="contents row">
   <div class="container">
-    <h2>ログイン</h2>
+    <h2 class="form__title">ログイン</h2>
 
     <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <div class="field">
-        <%= f.label :email, 'メールアドレス' %><br />
-        <%= f.email_field :email, autofocus: true %>
+        <%= f.label :email, 'メールアドレス',class: 'field__title' %><br />
+        <%= f.email_field :email, autofocus: true, class: 'field__text' %>
       </div>
 
       <div class="field">
-        <%= f.label :password, 'パスワード' %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+        <%= f.label :password, 'パスワード',class: 'field__title' %><br />
+        <%= f.password_field :password, autocomplete: "off", class: 'field__text' %>
       </div>
 
       <% if devise_mapping.rememberable? %>
@@ -20,9 +20,11 @@
         </div>
       <% end -%>
       <div class="actions">
-        <%= f.submit "ログイン" %>
+        <%= f.submit "ログイン", class: 'btn' %>
       </div>
-      <%= link_to 'かんたんログイン', users_guest_sign_in_path, method: :post %>
+      <div class="easy-log">
+      <%= link_to 'かんたんログイン', users_guest_sign_in_path, method: :post, class: 'e-btn' %>
+      </div>
     <% end %>
   </div>
 </div>
