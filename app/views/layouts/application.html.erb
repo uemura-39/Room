@@ -35,7 +35,7 @@
           <div class="header__contents--left">
             <%= link_to  "新規投稿", "/posts/new", class: "header--post" %>
             <span><%= link_to current_user.nickname, user_path(current_user), class: "header--post"%>
-            <%# <%= link_to "ログアウト", destroy_user_session_path, class:'header--post', method: :delete %> 
+              <%= link_to "ログアウト", destroy_user_session_path, class:'header--post', method: :delete %> 
             </span>
             
           </div>
