@@ -1,10 +1,15 @@
 <div class="contents row">
+  <h3 class="contents-title">
+    写真を投稿する
+  </h3>
   <div class="container">
-    <%= form_with(model: @post, local: true) do |form| %>
-      <h3>
-        投稿する
-      </h3>
-      <%= render partial: "form", locals: { form: form } %>
-    <% end %>
+    <div class="container__left">
+      <div class="pic">写真を投稿する</div>
+    </div>
+    <div class="container__right">
+      <%= form_with(model: @post, local: true) do |form| %>
+        <%= render partial: "form", locals: { form: form } %>
+      <% end %>
+    </div>
   </div>
 </div>
