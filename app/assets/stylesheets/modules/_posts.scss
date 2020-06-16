@@ -2,6 +2,7 @@ body {
   height: 100vh;
   background-color: whitesmoke;
   width: 100%;
+  overflow: scroll;
   
 }
 .row {
@@ -11,4 +12,5 @@ body {
 }
 .contents {
   text-align: center;
+  
 }
