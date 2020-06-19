@@ -1,5 +1,5 @@
 <div class="contents row">
-  <div class="container">
+  <div class="containers">
     <h2 class="form__title">ログイン</h2>
 
     <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
@@ -23,7 +23,7 @@
         <%= f.submit "ログイン", class: 'btn' %>
       </div>
       <div class="easy-log">
-      <%= link_to 'かんたんログイン', users_guest_sign_in_path, method: :post, class: 'e-btn' %>
+      <%= link_to 'かんたんログイン', users_guest_sign_in_path, method: :post, class: 'easy-btn' %>
       </div>
     <% end %>
   </div>

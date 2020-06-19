@@ -1,16 +1,15 @@
-body {
-  height: 100vh;
-  background-color: whitesmoke;
-  width: 100%;
-  overflow: scroll;
-  
-}
+
 .row {
   padding-top: 100px;
   margin: 0 auto;
+  height: 100%;
   
 }
 .contents {
   text-align: center;
+  background-color: whitesmoke;
+  overflow: scroll;
+}
+body {
   
 }
