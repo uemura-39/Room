@@ -2,11 +2,14 @@
 .row {
   padding-top: 100px;
   margin: 0 auto;
+  height: 100%;
   
 }
 .contents {
   text-align: center;
-  height: calc(100vh - 110px);
   background-color: whitesmoke;
   overflow: scroll;
+}
+body {
+  
 }
