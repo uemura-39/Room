@@ -40,17 +40,17 @@
   font-size: 0.8rem;
   font-weight:300;
 }
-.image-box {
-  height: 300px;
-  width: 300px;
-  background-color: white;
-  border: thin;
-  position: absolute;
-  left: 60px;
-}
+
 .category-box {
 padding-top: 250px;
 }
 .comment-box {
   padding-top: 100px;
+}
+
+.image-box {
+  height: 300px;
+  width: 300px;
+  background-color: salmon;
+  border: dotted;
 }
