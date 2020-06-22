@@ -20,10 +20,7 @@
     height: 100％;
   }
   &__right {
-    // position: relative;
-    background-color: gray;
     width: 500px;
-    position: relative;
   }
 }
 
@@ -51,8 +48,16 @@ padding-top: 250px;
 .image-box {
   height: 300px;
   width: 300px;
-  // background-color: salmon;
-  border: dotted 3px burlywood;
-  margin-right: 90px;
-  text-align: center;
+  border: .2rem dashed #cfcabf;
+  background-color: #f6f5f4;
+  margin-left: 50px;
+
+}
+.fa-camera{
+  margin: 0 auto;
+  margin-top: 100px;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.5;
+  }
 }

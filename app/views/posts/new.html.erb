@@ -22,12 +22,15 @@
         <div class='posts-title'>コメントを入力して下さい</div>
         <div class='required'>※必須です</div>
         <div class='show-text'>文字制限:200文字</div>
-        <div>aaaf</div>
       </div>
     </div>
     <div class="container__right">
-      <%= form_with(model: @post, local: true) do |form| %>
-        <%= form.text_field :image,placeholder: "写真を選択して下さい", class: 'image-box' %>
+      <%= form_with(model: @post,local: true) do |form| %>
+        <div class="image-box">
+          <%= form.label :image, for: "file-input", class: "fa fa-camera fa-5x" do %>
+          <%= form.file_field :image, id: "file-input", style: "display: none;" %>
+          <% end %>
+        </div>
         <%= form.text_area :text, placeholder: "text" , rows: "10" %>
         <%= form.submit "投稿する" %>
       <% end %>
