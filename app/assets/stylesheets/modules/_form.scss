@@ -50,10 +50,14 @@ padding-top: 250px;
   width: 300px;
   border: .2rem dashed #cfcabf;
   background-color: #f6f5f4;
-  margin-right: 90px;
-  text-align: center;
+  margin-left: 50px;
+
+}
+.fa-camera{
+  margin: 0 auto;
+  margin-top: 100px;
   cursor: pointer;
   &:hover {
-    overflow: 0.5;
+    opacity: 0.5;
   }
 }
