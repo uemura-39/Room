@@ -31,13 +31,13 @@
           <%= form.file_field :image, id: "file-input", style: "display: none;" %>
           <% end %>
         </div>
-        <div class="tag-box">
-          <%# ここにタグ送信フォームを実装予定 %>
+        <div class="category-box-left">
+          <%# ここにカテゴリー送信フォームを実装予定 %>
         </div>
         <div class="comment-text">
           <%= form.text_area :text, placeholder: "コメントを入力する" , size: "40x5", maxlength: "200", class: "comment-area" %>
         </div>
-        <%= form.submit "投稿する" %>
+        <%= form.submit "写真を投稿する", class: "submit-btn" %>
       <% end %>
     </div>
   </div>
