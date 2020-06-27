@@ -1,0 +1,15 @@
+.mypage {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  &__left {
+    height: 100vh;
+    width: 60%;
+    background-color: gray;
+  }
+  &__rigth {
+    width: 40%;
+    height: 100vh;
+    background-color: green;
+  }
+}
