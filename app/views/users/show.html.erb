@@ -1,16 +1,30 @@
 <div class="mypage">
-  <%# <%= link_to "ログアウト", destroy_user_session_path, class:'header--post', method: :delete %> 
+  <%= link_to "ログアウト", destroy_user_session_path, class:'header--post', method: :delete %>
   <div class="mypage__left">
   </div>
   <div class="mypage__rigth">
     <div class="mypage__rigth__top">
       <div class="mypage__rigth__top--icon">
-        
+        <%= image_tag "member_photo_noimage_thumb.png",class: "user_icon"%>
       </div>
       <div class="mypage__rigth__top--name">
-        <span><%= current_user.nickname%></span>
+        <span><%= @user.nickname %></span> 
       </div>
-    </div>
+      <div class="mypage__right__top--edit">
+        <% if user_signed_in? %>
+          <% if current_user.id == @user.id%>
+            <div class="link-btn"><%= link_to 'プロフィールを編集する', '#', class: 'profile-edit' %></div>
+            <% else%>
+            フォローする
+            <% end %>
+          <% else %>
+          <%# 非表示 %>
+          <% end %>
+      </div>
+      <div class="mypage__rigth__top--text">
+      <%# <%= simple_format %>
+      </div>
+
     <div class="mypage__rigth__link">
     </div>
   </div>
