@@ -12,8 +12,8 @@
     height: 100vh;
     // background-color: green;
     &__top{
-      height: 600px;
-      background-color: greenyellow;
+      height: 500px;
+      // background-color: greenyellow;
       text-align: center;
       &--icon {
         padding-top: 30px;
@@ -28,7 +28,7 @@
       &--link {
         margin: 30px auto;
         width: 80%;
-        border-top: solid;
+        border-top: solid .09rem #b4afa5;
       }
     }
   }
@@ -57,5 +57,13 @@
 .link {
   color: black;
   text-decoration: none;
-  border-bottom: solid;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.5;
+  }
 } 
+.btn-list {
+  border-bottom: solid .09rem #b4afa5;
+  padding: 1rem;
+  
+}

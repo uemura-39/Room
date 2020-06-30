@@ -25,12 +25,14 @@
           <% end %>
       </div>
       <div class="mypage__right__top--link">
-        <%= link_to "フォロー", '#', class: "link"%><br>
-        <%= link_to "フォロワー",'#', class: "link"%><br>
-        <%= link_to "いいねした投稿",'#', class: "link"%><br>
-        <% if  user_signed_in? && current_user.id == @user.id%>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link" %>
-        <% end %>
+        <ul>
+          <li class="btn-list">   <%= link_to "フォロー", '#', class: "link"%>
+          <li class="btn-list">   <%= link_to "フォロワー",'#', class: "link"%>
+          <li class="btn-list">   <%= link_to "いいねした投稿",'#', class: "link"%>
+                  <% if  user_signed_in? && current_user.id == @user.id%>
+          <li class="btn-list">   <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link" %>
+                  <% end %>
+        </ul>
       </div>
     </div>
   </div>
