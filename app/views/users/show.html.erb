@@ -1,11 +1,42 @@
-<div class="contents row">
-  <%= link_to "ログアウト", destroy_user_session_path, class:'header--post', method: :delete %> 
-  <p><%= @nickname %>さんの投稿一覧</p>
-
-  <% @posts.each do |post| %>
-    <div class="content_post" style="background-image: url(<%= post.image %>);">
-      <%= simple_format(post.text) %>
-      
+<div class="mypage">
+  <div class="mypage__left">
+  </div>
+  <div class="mypage__right">
+    <div class="mypage__right__top">
+      <div class="mypage__right__top--icon">
+        <%= image_tag "member_photo_noimage_thumb.png",class: "user_icon"%>
+      </div>
+      <div class="mypage__right__top--name">
+        <span><%= @user.nickname %></span>
+      </div> 
+      <div class="mypage__right__top--tag">
+      <%# 以下後で変更する予定 %>
+        性別 | 年代 | 職種
+      </div>
+      <div class="mypage__right__top--edit">
+        <% if user_signed_in? %>
+          <% if current_user.id == @user.id%>
+            <div class="link-btn"><%= link_to 'プロフィールを編集する', '#', class: 'profile-edit' %></div>
+            <% else%>
+              <div class="link-btn"><%= link_to 'フォローする', '#',class: 'profile-edit'%></div>
+            <% end %>
+          <% else %>
+          <%# 非表示 %>
+          <% end %>
+      </div>
+      <div class="mypage__right__top--link">
+        <ul>
+          <li class="btn-list">   <%= link_to "フォロー", '#', class: "link"%>
+          <li class="btn-list">   <%= link_to "フォロワー",'#', class: "link"%>
+          <li class="btn-list">   <%= link_to "いいねした投稿",'#', class: "link"%>
+                  <% if  user_signed_in? && current_user.id == @user.id%>
+          <li class="btn-list">   <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link" %>
+                  <% end %>
+        </ul>
+      </div>
     </div>
-  <% end %>
+    <div class="mypage__right__text">
+      <%# ここに自己紹介文 %>
+    </div>
+  </div>
 </div>
