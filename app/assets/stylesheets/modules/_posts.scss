@@ -18,8 +18,18 @@ body {
   height: 100vh;
   margin: 0 auto;
 }
-.post-image {
+.post-item {
   height: 300px;
   width: 300px;
+  margin: 30px 0 50px 0;
+  display: inline-block;
+}
+.post-nav {
+  background-color: gray;
+  text-align: left;
+}
+.user_icon-mini {
+  height: 25px;
+  width: 25px;
 }
 
