@@ -14,19 +14,22 @@ body {
 }
 .main-contents {
   width: 70%;
-  // background-color: gray;
   height: 100vh;
   margin: 0 auto;
 }
 .post-item {
   margin: 30px 10px 10px 10px;
   display: inline-block;
-  background-color: gray;
+  background-color: rgb(236, 234, 234);
   border-radius: 1rem;
 }
 .post-nav {
   text-align: left;
   height: 70px;
+  &-user {
+    text-decoration: none;
+    color: rgb(20, 19, 19);
+  }
 
 
 }
@@ -36,4 +39,7 @@ body {
 }
 img {
   border-radius: 1rem 1rem 0 0;
+}
+.post-category {
+  margin-left: 30px;
 }
