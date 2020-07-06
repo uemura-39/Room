@@ -1,18 +1,37 @@
 <div class ="post__show">
   <div class="post__show__left">
-    <div class="post__show__left--image"><%= image_tag(@post.image.to_s)%></div>
-    <% if user_signed_in? && current_user.id == @post.user_id %>
-    <%= link_to '編集', "/posts/#{@post.id}/edit", method: :get %>
-    <% end %>
-    <%= simple_format(@post.text) %>
+    <div class="post__show__left--image"><%= image_tag(@post.image.to_s) %></div>
+    <div class="post__show__left--bottom">
+    <%# 位置の調整は画像のサイズを変えれる様になってから %>
+      <div class="post__show__left--bottom--left">
+        <%= @post.created_at.strftime('%Y/%m/%d %H:%M') %>
+      </div>
+      <div class="post__show__left--bottom--right">
+        <% if user_signed_in? && current_user.id == @post.user_id %>
+        <%= link_to '編集', "/posts/#{@post.id}/edit", method: :get %>
+        <% end %>
+        <div>
+          シェア
+        </div>
+      </div>
+    </div>
+    <div class="post__show__left--text">
+      <%= simple_format(@post.text) %>
+    </div>
+    <div>
+    コメント実装する場所
+    </div>
+
   </div>
-  <div class="post__show__light">
+  <div class="post__show__right">
     <%= image_tag "member_photo_noimage_thumb.png",class: "user_icon-mini"%>
     <a href="/users/<%= @post.user.id %>">
-    <%= @post.user.nickname %>
-    </a>
-    <div class='post__show__light__like'>
+    <%= @post.user.nickname %></a>
+    <div class='post__show__right__like'>
       いいね
+    </div>
+    <div class="post__show__right__category">
+    カテゴリー
     </div>
   </div>
 </div>
