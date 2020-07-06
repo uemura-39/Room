@@ -1,26 +1,19 @@
 <div class ="post__show">
   <div class="post__show__left">
-    aaa
+    <div class="post__show__left--image"><%= image_tag(@post.image.to_s)%></div>
+    <% if user_signed_in? && current_user.id == @post.user_id %>
+    <%= link_to '編集', "/posts/#{@post.id}/edit", method: :get %>
+    <% end %>
+    <%= simple_format(@post.text) %>
   </div>
   <div class="post__show__light">
-  <% if user_signed_in? && current_user.id == @post.user_id %>
-    <div class="more">
-      <span><%= image_tag 'arrow_top.png' %></span>
-      <ul class="more_list">
-        <li>
-          <%= link_to '編集', "/posts/#{@post.id}/edit", method: :get %>
-        </li>
-        <li>
-          <%= link_to '削除', "/tweets/#{@post.id}", method: :delete %>
-        </li>
-      </ul>
+    <%= image_tag "member_photo_noimage_thumb.png",class: "user_icon-mini"%>
+    <a href="/users/<%= @post.user.id %>">
+    <%= @post.user.nickname %>
+    </a>
+    <div class='post__show__light__like'>
+      いいね
     </div>
-    <% end %>
-<%= simple_format(@post.text) %>
-    <span class="name">
-      <a href="/users/<%= @post.user.id %>">
-        <span>投稿者</span><%= @post.user.nickname %>
-
   </div>
 </div>
 
