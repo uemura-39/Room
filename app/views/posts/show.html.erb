@@ -8,10 +8,10 @@
       </div>
       <div class="post__show__left--bottom--right">
         <% if user_signed_in? && current_user.id == @post.user_id %>
-        <%= link_to '編集', "/posts/#{@post.id}/edit", method: :get, class: 'd' %>
+        |<%= link_to '編集', "/posts/#{@post.id}/edit", method: :get, class: 'show-edit-btn' %>
         <% end %>
         <div>
-          シェア
+          |シェア|
         </div>
       </div>
     </div>
