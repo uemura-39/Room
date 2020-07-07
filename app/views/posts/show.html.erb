@@ -8,7 +8,7 @@
       </div>
       <div class="post__show__left--bottom--right">
         <% if user_signed_in? && current_user.id == @post.user_id %>
-        <%= link_to '編集', "/posts/#{@post.id}/edit", method: :get %>
+        <%= link_to '編集', "/posts/#{@post.id}/edit", method: :get, class: 'd' %>
         <% end %>
         <div>
           シェア
@@ -16,22 +16,27 @@
       </div>
     </div>
     <div class="post__show__left--text">
-      <%= simple_format(@post.text) %>
-    </div>
-    <div>
-    コメント実装する場所
+      コメント実装する場所
     </div>
 
   </div>
   <div class="post__show__right">
-    <%= image_tag "member_photo_noimage_thumb.png",class: "user_icon-mini"%>
-    <a href="/users/<%= @post.user.id %>">
-    <%= @post.user.nickname %></a>
+    <%= image_tag "member_photo_noimage_thumb.png",class: "user_icon"%><br>
+    <div class="post__show__right--user"><a href="/users/<%= @post.user.id %>"><%= @post.user.nickname %></a></div>
     <div class='post__show__right__like'>
-      いいね
+      <div class="like-btn">いいね</div>
     </div>
+      ◯◯人がいいねしています
+      <%# ◯のところにいいねの数をいれる %>
+
     <div class="post__show__right__category">
-    カテゴリー
+      カテゴリー<br>
+      〇〇
+      <%# 上記にカテゴリーを表示する %>
+    </div>
+    紹介文
+    <div class="post__show__right__text">
+      <%= simple_format(@post.text) %>
     </div>
   </div>
 </div>

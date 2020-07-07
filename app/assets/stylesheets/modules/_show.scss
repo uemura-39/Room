@@ -1,13 +1,13 @@
 .post__show {
   width: 70%;
-  background-color: gray;
+  // background-color: gray;
   margin: 0 auto;
   display: flex;
   margin-top: 50px;
   &__left {
     width: 70%;
     height: 100vh;
-    background-color: white;
+    // background-color: white;
     &--image {
       text-align: center;
     }
@@ -30,6 +30,28 @@
   &__right {
     width: 30%;
     text-align: center;
+    &--user {
+      font-weight: bold;
+      text-decoration: none;
+    }
+    &__like {
+      margin: 20px auto 5px auto;
+      border: 1px solid black;
+      width: 40%;
+      height: 50px;
+      border-radius: 1rem;
+    }
+    &__category {
+      margin: 20px auto;
+    }
+    &__text {
+      margin-top: 10px;
+      border: black solid 1px;
+      border-radius: 1rem;
+    }
   }
 
+}
+.like-btn {
+  padding-top: 14px;
 }
