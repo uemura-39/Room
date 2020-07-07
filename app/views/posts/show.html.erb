@@ -1,24 +1,44 @@
-<div class ="contents row">
-  <div class="content_post" style="background-image: url(<%= @post.image %>);">
-  <% if user_signed_in? && current_user.id == @post.user_id %>
-    <div class="more">
-      <span><%= image_tag 'arrow_top.png' %></span>
-      <ul class="more_list">
-        <li>
-          <%= link_to '編集', "/posts/#{@post.id}/edit", method: :get %>
-        </li>
-        <li>
-          <%= link_to '削除', "/tweets/#{@post.id}", method: :delete %>
-        </li>
-      </ul>
+<div class ="post__show">
+  <div class="post__show__left">
+    <div class="post__show__left--image"><%= image_tag(@post.image.to_s) %></div>
+    <div class="post__show__left--bottom">
+    <%# 位置の調整は画像のサイズを変えれる様になってから %>
+      <div class="post__show__left--bottom--left">
+        <%= @post.created_at.strftime('%Y/%m/%d %H:%M') %>
+      </div>
+      <div class="post__show__left--bottom--right">
+        <% if user_signed_in? && current_user.id == @post.user_id %>
+        <%= link_to '編集', "/posts/#{@post.id}/edit", method: :get, class: 'd' %>
+        <% end %>
+        <div>
+          シェア
+        </div>
+      </div>
     </div>
-    <% end %>
-    <%= simple_format(@post.text) %>
-    <span class="name">
-      <a href="/users/<%= @post.user.id %>">
-        <span>投稿者</span><%= @post.user.nickname %>
-      </a>
-    </span>
-    </span>
+    <div class="post__show__left--text">
+      コメント実装する場所
+    </div>
+
+  </div>
+  <div class="post__show__right">
+    <%= image_tag "member_photo_noimage_thumb.png",class: "user_icon"%><br>
+    <div class="post__show__right--user"><a href="/users/<%= @post.user.id %>"><%= @post.user.nickname %></a></div>
+    <div class='post__show__right__like'>
+      <div class="like-btn">いいね</div>
+    </div>
+      ◯◯人がいいねしています
+      <%# ◯のところにいいねの数をいれる %>
+
+    <div class="post__show__right__category">
+      カテゴリー<br>
+      〇〇
+      <%# 上記にカテゴリーを表示する %>
+    </div>
+    紹介文
+    <div class="post__show__right__text">
+      <%= simple_format(@post.text) %>
+    </div>
   </div>
 </div>
+
+
