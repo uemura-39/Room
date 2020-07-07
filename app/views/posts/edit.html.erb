@@ -1,11 +1,44 @@
 <div class="contents row">
-  <h3 class="contents__title">
-    投稿を編集する
+  <h3 class="contents-title">
+    写真を編集する
   </h3>
   <div class="container">
-    <%= form_with(model: @post, local: true) do |form| %>
-      
-      <%= render partial: "form", locals: { form: form } %>
-    <% end %>
+    <div class="container__left">
+      <div calss="pic-box">
+        <div class="posts-title">写真を投稿する</div>
+        <div class="required">※必須です</div>
+        <div class="show-text">
+          画像形式:JPEG/PNG
+          <br>
+          容量:5MB以内
+        </div>
+      </div>
+      <div class='category-box'>
+        <div class='posts-title'>カテゴリーを選択する</div >
+        <div class= 'required'>※必須です</div>
+        <div class='show-text'>1つだけ選択して下さい</div>
+      </div>
+      <div class='comment-box'>
+        <div class='posts-title'>コメントを入力して下さい</div>
+        <div class='required'>※必須です</div>
+        <div class='show-text'>文字制限:200文字</div>
+      </div>
+    </div>
+    <div class="container__right">
+      <%= form_with(model: @post,local: true) do |form| %>
+        <div class="image-box">
+          <%= form.label :image, for: "file-input", class: "fa fa-camera fa-5x" do %>
+          <%= form.file_field :image, id: "file-input", style: "display: none;" %>
+          <% end %>
+        </div>
+        <div class="category-box-left">
+          <%# ここにカテゴリー送信フォームを実装予定 %>
+        </div>
+        <div class="comment-text">
+          <%= form.text_area :text, placeholder: "コメントを入力する" , size: "40x5", maxlength: "200", class: "comment-area" %>
+        </div>
+        <%= form.submit "写真を投稿する", class: "submit-btn" %>
+      <% end %>
+    </div>
   </div>
 </div>
