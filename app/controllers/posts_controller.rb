@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   def update
     post = Post.find(params[:id])
     post.update(post_params)
-    redirect_to root_path
+    redirect_to posts_path(post.id)
   end
 
   def show
@@ -45,6 +45,5 @@ class PostsController < ApplicationController
 
   def move_to_index
     redirect_to action: :index unless user_signed_in?
-
   end
 end
