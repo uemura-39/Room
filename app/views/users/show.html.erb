@@ -8,7 +8,7 @@
       </div>
       <div class="mypage__right__top--name">
         <span><%= @user.nickname %></span>
-      </div> 
+      </div>
       <div class="mypage__right__top--tag">
       <%# 以下後で変更する予定 %>
         性別 | 年代 | 職種
@@ -16,7 +16,7 @@
       <div class="mypage__right__top--edit">
         <% if user_signed_in? %>
           <% if current_user.id == @user.id%>
-            <div class="link-btn"><%= link_to 'プロフィールを編集する', '#', class: 'profile-edit' %></div>
+            <div class="link-btn"><%= link_to 'プロフィールを編集する', edit_user_path(current_user), class: 'profile-edit' %></div>
             <% else%>
               <div class="link-btn"><%= link_to 'フォローする', '#',class: 'profile-edit'%></div>
             <% end %>
@@ -29,9 +29,9 @@
           <li class="btn-list">   <%= link_to "フォロー", '#', class: "link"%>
           <li class="btn-list">   <%= link_to "フォロワー",'#', class: "link"%>
           <li class="btn-list">   <%= link_to "いいねした投稿",'#', class: "link"%>
-                  <% if  user_signed_in? && current_user.id == @user.id%>
+          <% if user_signed_in? && current_user.id == @user.id%>
           <li class="btn-list">   <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link" %>
-                  <% end %>
+          <% end %>
         </ul>
       </div>
     </div>
