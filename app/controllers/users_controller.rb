@@ -10,7 +10,11 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    redirect_to @user
+    if @user.update(user_params)
+      redirect_to @user
+    else
+      redirect_to edit_user_parh(current_user)
+    end
   end
 
 
