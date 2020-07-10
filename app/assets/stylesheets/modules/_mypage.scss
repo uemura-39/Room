@@ -30,6 +30,9 @@
         width: 80%;
         border-top: solid .09rem #b4afa5;
       }
+      &--profile{
+        text-align: center;
+      }
     }
   }
 }
@@ -48,7 +51,7 @@
   &:hover {
     opacity: 0.5;
   }
-  
+
 }
 .link-btn {
   text-align: center;
@@ -61,9 +64,9 @@
   &:hover {
     opacity: 0.5;
   }
-} 
+}
 .btn-list {
   border-bottom: solid .09rem #b4afa5;
   padding: 1rem;
-  
+
 }
