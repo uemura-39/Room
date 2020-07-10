@@ -11,7 +11,7 @@
       </div>
       <div class="mypage__right__top--tag">
       <%# 以下後で変更する予定 %>
-        性別 | 年代 | 職種
+        <%# 性別 | 年代 | 職種 %>
       </div>
       <div class="mypage__right__top--edit">
         <% if user_signed_in? %>
@@ -36,7 +36,8 @@
       </div>
     </div>
     <div class="mypage__right__text">
-      <%# ここに自己紹介文 %>
+      ここに自己紹介文
+      <%= simple_format(@user.profile) %>
     </div>
   </div>
 </div>
