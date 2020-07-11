@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
+  before_action :move_to_mypage, only: [:edit, :update]
 
   def show
     @posts = @user.posts
@@ -12,7 +13,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to @user
     else
-      redirect_to edit_user_parh(current_user)
+      redirect_to edit_user_path(current_user)
     end
   end
 
@@ -22,6 +23,12 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def move_to_mypage
+    if @current_user != @user
+      redirect_to edit_user_path(current_user)
+    end
   end
 
 end
