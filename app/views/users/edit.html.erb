@@ -3,8 +3,12 @@
   <%= f.label :nickname, 'ユーザー名'%>
   <%= f.text_field :nickname, autofocus: true, autocomplete: 'name', required: 'required' %>
 
+  <%= f.label :email, 'メールアドレス' %>
+  <%= f.email_field :email, autocomplete: 'email', class: 'form-control', required: 'required' %>
+
   <%= f.label :profile, '自己紹介（１５０文字以内）' %>
       <%= f.text_area :profile, class: 'form-control', rows: 5 %>
       <%= f.submit '変更を保存する', class: 'btn btn-primary' %>
+
   <% end %>
 </div>
