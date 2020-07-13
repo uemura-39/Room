@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
-  before_action :move_to_mypage, only: [:edit, :update]
+  # before_action :move_to_mypage, only: [:edit, :update]
 
   def show
     @posts = @user.posts

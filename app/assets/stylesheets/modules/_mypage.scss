@@ -10,10 +10,16 @@
   &__right {
     width: 30%;
     height: 100vh;
-    // background-color: green;
+    &--profile{
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    &__text {
+      text-align: center;
+
+    }
     &__top{
       height: 500px;
-      // background-color: greenyellow;
       text-align: center;
       &--icon {
         padding-top: 30px;
@@ -30,16 +36,10 @@
         width: 80%;
         border-top: solid .09rem #b4afa5;
       }
-      &--profile{
-        text-align: center;
-      }
     }
   }
 }
-.user_icon {
-  height: 70px;
-  width: 70px;
-}
+
 .profile-edit {
   font-size: 15px;
   border: solid .1rem;

@@ -1,0 +1,30 @@
+.edit {
+  margin: 0 auto;
+  &__title {
+    text-align: center;
+    height: 50px;
+  background-color:#f0ebe7;
+  font-size: 25px;
+  font-weight: bold;
+  padding-top: 10px;
+  }
+  &__form {
+    width: 70%;
+    margin: 30px auto;
+    text-align: center;
+    &--title {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  }
+}
+.textbox {
+  outline: none;
+  padding: 10px;
+  border: none;
+  border-radius: 1rem;
+  width: 40%;
+}
+.image-nav {
+  display: none;
+}

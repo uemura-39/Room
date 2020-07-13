@@ -1,6 +1,6 @@
 <div class ="post__show">
   <div class="post__show__left">
-    <div class="post__show__left--image"><%= image_tag(@post.image.to_s) %></div>
+    <div class="post__show__left--image"><%= image_tag(@post.image.to_s, size: '600x600') %></div>
     <div class="post__show__left--bottom">
     <%# 位置の調整は画像のサイズを変えれる様になってから %>
       <div class="post__show__left--bottom--left">
@@ -22,7 +22,7 @@
 
   </div>
   <div class="post__show__right">
-    <%= image_tag "member_photo_noimage_thumb.png",class: "user_icon"%><br>
+    <%= image_tag('icon.png',size: '70x70')%><br>
     <div class="post__show__right--user"><a href="/users/<%= @post.user.id %>"><%= @post.user.nickname %></a></div>
     <div class='post__show__right__like'>
       <div class="like-btn">いいね</div>

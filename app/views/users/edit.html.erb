@@ -1,14 +1,23 @@
-<div class="mypage">
-  <%= form_for @user do |f| %>
-  <%= f.label :nickname, 'ユーザー名'%>
-  <%= f.text_field :nickname, autofocus: true, autocomplete: 'name', required: 'required' %>
+<div class="edit">
+  <div class="edit__title">プロフィールを編集する</div>
+    <%= form_for @user do |f| %>
+      <div class="edit__form">
+        <div><%= f.label :image, class: 'image-nav' %>
+            <%= f.file_field :image %>
+        </div>
 
-  <%= f.label :email, 'メールアドレス' %>
-  <%= f.email_field :email, autocomplete: 'email', class: 'form-control', required: 'required' %>
 
-  <%= f.label :profile, '自己紹介（１５０文字以内）' %>
-      <%= f.text_area :profile, class: 'form-control', rows: 5 %>
-      <%= f.submit '変更を保存する', class: 'btn btn-primary' %>
 
-  <% end %>
+        <div class="edit__form--title"><%= f.label :nickname, 'ユーザー名(6文字以内)'%></div>
+        <div><%= f.text_field :nickname, autofocus: true, autocomplete: 'name', required: 'required',class: 'textbox' %></div>
+
+        <div class="edit__form--title"><%= f.label :email, 'メールアドレス' %></div>
+        <div><%= f.email_field :email, autocomplete: 'email', class: 'form-control', required: 'required',class: 'textbox' %></div>
+
+        <div class="edit__form--title"><%= f.label :profile, '自己紹介（１５０文字以内）' %></div>
+        <div><%= f.text_area :profile, class: 'form-control', rows: 5,class: 'textbox' %></div>
+
+        <div><%= f.submit '更新する', class: 'btn btn-primary' %></div>
+      </div>
+    <% end %>
 </div>
