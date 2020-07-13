@@ -1,0 +1,30 @@
+.comment {
+  margin: 30px 0;
+  text-align: justify;
+  &--text {
+    margin: 10px 0 0 40px;
+    padding: 15px;
+    background-color: rgb(233, 233, 233);
+    border-radius: 1rem;
+    &--box {
+      width: 100%;
+      border-radius: 1rem;
+      padding: 10px;
+      outline: none;
+    }
+  }
+  &--delete {
+    text-decoration: none;
+    color:#ff3333;
+    margin-left: 380px;
+  }
+}
+.comment--user {
+  text-decoration: none;
+  color:#ff3333;
+  font-weight: 900;
+  &_icon {
+    height: 30px;
+    width: 30px;
+  }
+}

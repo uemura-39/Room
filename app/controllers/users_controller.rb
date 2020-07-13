@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 
   def move_to_mypage
     if @current_user != @user
-      redirect_to edit_user_path(current_user)
+      redirect_to root_path
     end
   end
 
