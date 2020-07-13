@@ -1,20 +1,25 @@
-<% if current_user %>
-      <%= form_with(model: [@post, @comment], local: true) do |form| %>
-        <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
-        <%= form.submit "SEND" %>
-      <% end %>
-      <% else %>
-        <%= link_to 'ログインする',new_user_session_path %>
-      <% end %>
-
-      <div class="comments">
-        <h4>＜コメント一覧＞</h4>
-        <% if @comments %>
-          <% @comments.each do |comment| %>
-            <p>
-              <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
-              <%= comment.text %>
-            </p>
+<div class="comments">
+    <% if @comments %>
+      <% @comments.each do |comment| %>
+        <div class="comment">
+          <%= image_tag "member_photo_noimage_thumb.png",class: "comment--user_icon"%>
+          <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}", class:'comment--user' %></strong>
+          <%= comment.created_at.strftime('%Y/%m/%d %H:%M') %>
+          <% if user_signed_in? && current_user.id == comment.user.id %>
+          <%= link_to '削除する', '#', class: 'comment--delete'%>
           <% end %>
-        <% end %>
-      </div>
+          <div class="comment--text"><%= comment.text %></div>
+        </div>
+      <% end %>
+    <% end %>
+
+  <% if current_user %>
+    <%= form_with(model: [@post, @comment], local: true) do |form| %>
+      <%= form.text_area :text, placeholder: "コメントを入力して下さい(１５０文字以内）", rows: "3", class:'text' %>
+      <%= form.submit "コメントする", class:'text' %>
+    <% end %>
+    <% else %>
+      <%= link_to 'ログインする',new_user_session_path , class:'text'%>
+    <% end %>
+</div>
+
