@@ -5,7 +5,8 @@
     <div class="mypage__right__top">
       <div class="mypage__right__top--icon">
       <% if @user.image? %>
-      <%= image_tag(@user.image.to_s, size: '70x70') %>
+      <%= image_tag('icon.png', size: '70x70')%>
+      <br>ture
       <% else %>
       <%= image_tag('icon.png', size: '70x70')%>
       <% end %>
@@ -40,7 +41,7 @@
       </div>
     </div>
     <div class="mypage__right__text">
-        <div class="mypage__right--profile">自己紹介</div>
+      <div class="mypage__right--profile">自己紹介</div>
       <%= simple_format(@user.profile) %>
     </div>
   </div>
