@@ -4,7 +4,7 @@
         <%= form.submit "SEND" %>
       <% end %>
       <% else %>
-      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+        <%= link_to 'ログインする',new_user_session_path %>
       <% end %>
 
       <div class="comments">
