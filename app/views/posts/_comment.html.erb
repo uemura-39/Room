@@ -15,11 +15,10 @@
 
   <% if current_user %>
     <%= form_with(model: [@post, @comment], local: true) do |form| %>
-      <%= form.text_area :text, placeholder: "コメントを入力して下さい(１５０文字以内）", rows: "3", class:'text' %>
-      <%= form.submit "コメントする", class:'text' %>
+      <%= form.text_area :text, placeholder: "コメントを入力して下さい(１５０文字以内）", rows: "3", class:'comment--text--box' %>
+      <%= form.submit "コメントする", class:'submit-btn' %>
     <% end %>
     <% else %>
-      <%= link_to 'ログインする',new_user_session_path , class:'text'%>
     <% end %>
 </div>
 
