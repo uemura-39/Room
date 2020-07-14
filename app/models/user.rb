@@ -11,6 +11,7 @@ class User < ApplicationRecord
     end
   end
   has_many :posts
-  has_many :comments
-  has_many :likes
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :like_posts, through: :likes, source: :post
 end

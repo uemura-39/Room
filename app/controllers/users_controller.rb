@@ -4,6 +4,8 @@ class UsersController < ApplicationController
 
   def show
     @posts = @user.posts
+    # @like_posts = @user.like_posts
+    # 上はマイページにいいね一覧機能を追加した時に使います
   end
 
   def edit
