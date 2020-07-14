@@ -25,9 +25,19 @@
     <%= image_tag('icon.png',size: '70x70')%><br>
     <div class="post__show__right--user"><a href="/users/<%= @post.user.id %>"><%= @post.user.nickname %></a></div>
     <div class='post__show__right__like'>
-      <div class="like-btn">いいね</div>
+      <%# <div class="like-btn">いいね</div> %>
+        <% if user_signed_in? %>
+          <% if @post.liked_by?(current_user) %> <!-- ログインしているユーザーがファボしたかどうかで分岐 -->
+            <p><span>お気に入り解除: </span><%= link_to @post.likes.count, post_like_path(@post.id), method: :delete %></p>
+          <% else %>
+            <p><span>お気に入り登録: </span><%= link_to @post.likes.count, post_likes_path(@post.id), method: :post %></p>
+        <% end %>
+      <% else %>
+      <p><span>お気に入り数: </span><%= post.likes.count %></p>
+    <% end %>
+  <!-- ここまで -->
     </div>
-      ◯◯人がいいねしています
+      <%# ◯◯人がいいねしています %>
       <%# ◯のところにいいねの数をいれる %>
 
     <div class="post__show__right__category">

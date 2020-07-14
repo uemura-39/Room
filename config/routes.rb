@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'likes/create'
+  get 'likes/destroy'
   devise_for :users
   root to: 'posts#index'
   devise_scope :user do
@@ -7,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :comments, only: [:create, :destroy]
+    resources :likes, only: [:create, :destroy]
     collection do
       get 'search'
     end
