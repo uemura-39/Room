@@ -6,7 +6,7 @@
           <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}", class:'comment--user' %></strong>
           <%= comment.created_at.strftime('%Y/%m/%d %H:%M') %>
           <% if user_signed_in? && current_user.id == comment.user.id %>
-          <%= link_to '削除する', '#', class: 'comment--delete'%>
+          <%= link_to '削除する', post_comment_path(comment.post.id, comment.id), class: 'comment--delete', method: :delete %>
           <% end %>
           <div class="comment--text"><%= comment.text %></div>
         </div>
