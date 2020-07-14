@@ -33,7 +33,7 @@
             <p><span>お気に入り登録: </span><%= link_to @post.likes.count, post_likes_path(@post.id), method: :post %></p>
         <% end %>
       <% else %>
-      <p><span>お気に入り数: </span><%= post.likes.count %></p>
+      <p><span>お気に入り数: </span><%= @post.likes.count %></p>
     <% end %>
   <!-- ここまで -->
     </div>
