@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'likes/create'
-  get 'likes/destroy'
   devise_for :users
   root to: 'posts#index'
   devise_scope :user do
@@ -14,5 +12,9 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:show, :edit, :update] do
+    resource :relationships, only: [:create, :destroy]
+    get :follows, on: :member
+    get :followers, on: :member
+  end
 end
