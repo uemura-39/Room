@@ -36,10 +36,9 @@
     }
     &__like {
       margin: 20px auto 5px auto;
-      border: 1px solid black;
       width: 40%;
       height: 50px;
-      border-radius: 1rem;
+
     }
     &__category {
       margin: 20px auto;
@@ -52,8 +51,26 @@
 }
 .like-btn {
   padding-top: 14px;
+  text-decoration: none;
+  padding: 20px 30px;
+  border: solid .1rem;
+  border-radius: 2rem;
+  color:#ff3333;
+  font-weight: bold;
+  &:hover {
+    opacity: 0.5;
+  }
 }
 .show-edit-btn {
   text-decoration: none;
   color: rgba(68,51,17,.6);
+}
+.user-nav {
+  text-decoration: none;
+  color: #FF3333;
+}
+.like {
+  color: white;
+  border: #ff3333 solid .1rem;
+  background-color: #ff3333;
 }
