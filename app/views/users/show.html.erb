@@ -26,7 +26,7 @@
               <% if @user.followed_by?(current_user) %>
                 <p><%= link_to "フォロー済み", user_relationships_path(@user.id), method: :delete,class: 'profile-edit' %></p>
               <% else %>
-              <p><%= link_to "フォローする", user_relationships_path(@user.id), method: :post,class: 'profile-edit' %></p>
+                <p><%= link_to "フォローする", user_relationships_path(@user.id), method: :post,class: 'profile-edit' %></p>
               <% end %>
             <% end %>
           <% else %>
@@ -39,7 +39,7 @@
           <li class="btn-list">   <%= link_to "フォロワー",'#', class: "link"%>
           <li class="btn-list">   <%= link_to "いいねした投稿",'#', class: "link"%>
           <% if user_signed_in? && current_user.id == @user.id%>
-          <li class="btn-list">   <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link" %>
+            <li class="btn-list">   <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link" %>
           <% end %>
         </ul>
       </div>
