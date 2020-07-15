@@ -22,7 +22,7 @@
             <div class="link-btn"><%= link_to 'プロフィールを編集する', edit_user_path(current_user), class: 'profile-edit' %></div>
             <% else%>
               <% if @user.followed_by?(current_user) %>
-                <p><%= link_to "フォロー済み", user_relationships_path(@user.id), method: :delete,class: 'profile-edit' %></p>
+                <p><%= link_to "フォロー中", user_relationships_path(@user.id), method: :delete,class: 'profile-edit now' %></p>
               <% else %>
                 <p><%= link_to "フォローする", user_relationships_path(@user.id), method: :post,class: 'profile-edit' %></p>
               <% end %>
