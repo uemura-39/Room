@@ -28,14 +28,13 @@
       <%# <div class="like-btn">いいね</div> %>
         <% if user_signed_in? %>
           <% if @post.liked_by?(current_user) %> <!-- ログインしているユーザーがファボしたかどうかで分岐 -->
-            <p><span>お気に入り解除: </span><%= link_to @post.likes.count, post_like_path(@post.id), method: :delete, class: 'like-btn' %></p>
+            <p><%= link_to 'いいね', post_like_path(@post.id), method: :delete, class: 'like-btn like' %></p>
+            <% else %>
+            <p><%= link_to 'いいね', post_likes_path(@post.id), method: :post, class: 'like-btn' %></p>
+            <% end %>
           <% else %>
-            <p><span>お気に入り登録: </span><%= link_to @post.likes.count, post_likes_path(@post.id), method: :post, class: 'like-btn' %></p>
+            いいね
         <% end %>
-      <% else %>
-      <p><span>お気に入り数: </span><%= @post.likes.count %></p>
-    <% end %>
-  <!-- ここまで -->
     </div>
       <%= @post.likes.count %>人がいいねしています
       <%# ◯のところにいいねの数をいれる %>
