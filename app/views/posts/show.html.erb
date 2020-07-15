@@ -25,20 +25,16 @@
     <%= image_tag('icon.png',size: '70x70')%><br>
     <div class="post__show__right--user"><%= link_to @post.user.nickname, @post.user, class: 'user-nav' %></div>
     <div class='post__show__right__like'>
-      <%# <div class="like-btn">いいね</div> %>
         <% if user_signed_in? %>
-          <% if @post.liked_by?(current_user) %> <!-- ログインしているユーザーがファボしたかどうかで分岐 -->
+          <% if @post.liked_by?(current_user) %>
             <p><%= link_to 'いいね', post_like_path(@post.id), method: :delete, class: 'like-btn like' %></p>
             <% else %>
             <p><%= link_to 'いいね', post_likes_path(@post.id), method: :post, class: 'like-btn' %></p>
             <% end %>
           <% else %>
-            いいね
         <% end %>
     </div>
       <%= @post.likes.count %>人がいいねしています
-      <%# ◯のところにいいねの数をいれる %>
-
     <div class="post__show__right__category">
       カテゴリー<br>
       〇〇
