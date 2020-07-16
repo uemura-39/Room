@@ -1,6 +1,6 @@
 <div class="mypage">
   <div class="mypage__left">
-    <%= @user.nickname %>さんのフォロー一覧
+    <div class="mypage__left--top"><%= @user.nickname %>さんのフォロー一覧</div>
     <% @users.each do |user| %>
     <%= link_to user.nickname, user_path(user.id) %>
     <% end %>
@@ -39,7 +39,7 @@
         <ul>
           <li class="btn-list">   <%= link_to "フォロー", follows_user_path(@user.id), class: "link"%>
           <li class="btn-list">   <%= link_to "フォロワー",followers_user_path(@user.id), class: "link"%>
-          <li class="btn-list">   <%= link_to "いいねした投稿",'#', class: "link"%>
+          <li class="btn-list">   <%= link_to "いいねした投稿",likes_user_path(@user.id), class: "link"%>
           <% if user_signed_in? && current_user.id == @user.id%>
             <li class="btn-list">   <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link" %>
           <% end %>

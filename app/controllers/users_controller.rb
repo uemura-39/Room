@@ -31,6 +31,11 @@ class UsersController < ApplicationController
     @users = user.followers
   end
 
+  def likes
+    @user = User.find(params[:id])
+    @like_posts = @user.like_posts
+  end
+
   def user_params
     params.require(:user).permit(:nickname, :email, :image, :profile)
   end

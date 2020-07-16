@@ -1,8 +1,8 @@
 <div class="mypage">
   <div class="mypage__left">
-    <div class="mypage__left--top"><%= @user.nickname %>さんのフォロワー一覧</div>
-    <% @users.each do |user| %>
-    <%= link_to user.nickname, user_path(user.id) %>
+    <div class="mypage__left--top"><%= @user.nickname %>さんがいいねした投稿</div>
+    <% @like_posts.each do |post| %>
+    <%= link_to image_tag(post.image.to_s,size: '200x230'), post%>
     <% end %>
   </div>
   <div class="mypage__right">
@@ -39,7 +39,7 @@
         <ul>
           <li class="btn-list">   <%= link_to "フォロー", follows_user_path(@user.id), class: "link"%>
           <li class="btn-list">   <%= link_to "フォロワー",followers_user_path(@user.id), class: "link"%>
-          <li class="btn-list">   <%= link_to "いいねした投稿",likes_user_path(@user.id), class: "link"%>
+          <li class="btn-list">   <%= link_to "いいねした投稿",'#', class: "link"%>
           <% if user_signed_in? && current_user.id == @user.id%>
             <li class="btn-list">   <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link" %>
           <% end %>
@@ -52,4 +52,3 @@
     </div>
   </div>
 </div>
-
