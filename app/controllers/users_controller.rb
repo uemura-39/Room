@@ -33,7 +33,7 @@ class UsersController < ApplicationController
 
   def likes
     @user = User.find(params[:id])
-    @like_posts = @user.like_posts
+    @like_posts = @user.like_posts.order("created_at Desc")
   end
 
   def user_params
