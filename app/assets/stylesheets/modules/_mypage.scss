@@ -5,7 +5,12 @@
   &__left {
     height: 100vh;
     width: 70%;
-    background-color: gray;
+    &--top {
+      text-align: center;
+      font-size: 25px;
+      font-weight: bold;
+      padding-top: 10px;
+    }
   }
   &__right {
     width: 30%;

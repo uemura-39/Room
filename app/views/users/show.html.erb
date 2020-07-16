@@ -1,5 +1,13 @@
 <div class="mypage">
   <div class="mypage__left">
+    <div class="mypage__left--top">
+      <div><%=@user.nickname%>さんの投稿一覧</div>
+    </div>
+    <div class="mypage__left--content">
+      <% @posts.each do |post| %>
+        <%= link_to image_tag(post.image.to_s,size: '200x230'), post%>
+      <% end %>
+    </div>
   </div>
   <div class="mypage__right">
     <div class="mypage__right__top">
