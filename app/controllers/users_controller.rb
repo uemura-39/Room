@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   # before_action :move_to_mypage, only: [:edit, :update]
 
   def show
-    @posts = @user.posts
+    @posts = @user.posts.order("created_at Desc")
     # @like_posts = @user.like_posts
     # 上はマイページにいいね一覧機能を追加した時に使います
   end
@@ -20,11 +20,13 @@ class UsersController < ApplicationController
   end
 
   def follows
+    @user = User.find(params[:id])
     user = User.find(params[:id])
     @users = user.followings
   end
 
   def followers
+    @user = User.find(params[:id])
     user = User.find(params[:id])
     @users = user.followers
   end
