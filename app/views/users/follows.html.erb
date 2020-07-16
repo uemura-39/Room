@@ -1,11 +1,54 @@
-<% @users.each do |user| %>
-  <hr>
-  <p><%= link_to user.nickname, user_path(user.id) %></p>
-    <% if current_user != user %>
-        <% if user.followed_by?(current_user) %>
-            <p><%=link_to "フォロー済み", user_relationships_path(user.id), method: :delete %></p>
-        <% else %>
-            <p><%=link_to "フォローする", user_relationships_path(user.id), method: :post %></p>
-        <% end %>
+<div class="mypage">
+  <div class="mypage__left">
+    <%= @user.nickname %>さんのフォロー一覧
+    <% @users.each do |user| %>
+    <%= link_to user.nickname, user_path(user.id) %>
     <% end %>
-<% end %>
+  </div>
+  <div class="mypage__right">
+    <div class="mypage__right__top">
+      <div class="mypage__right__top--icon">
+      <% if @user.image? %>
+      <%= image_tag('icon.png', size: '70x70')%>
+      <br>ture
+      <% else %>
+      <%= image_tag('icon.png', size: '70x70')%>
+      <% end %>
+      </div>
+      <div class="mypage__right__top--name">
+        <span><%= @user.nickname %></span>
+      </div>
+      <div class="mypage__right__top--tag">
+      </div>
+      <div class="mypage__right__top--edit">
+        <% if user_signed_in? %>
+          <% if current_user.id == @user.id%>
+            <div class="link-btn"><%= link_to 'プロフィールを編集する', edit_user_path(current_user), class: 'profile-edit' %></div>
+            <% else%>
+              <% if @user.followed_by?(current_user) %>
+                <p><%= link_to "フォロー中", user_relationships_path(@user.id), method: :delete,class: 'profile-edit now' %></p>
+              <% else %>
+                <p><%= link_to "フォローする", user_relationships_path(@user.id), method: :post,class: 'profile-edit' %></p>
+              <% end %>
+            <% end %>
+          <% else %>
+          <%# 非表示 %>
+        <% end %>
+      </div>
+      <div class="mypage__right__top--link">
+        <ul>
+          <li class="btn-list">   <%= link_to "フォロー", follows_user_path(@user.id), class: "link"%>
+          <li class="btn-list">   <%= link_to "フォロワー",followers_user_path(@user.id), class: "link"%>
+          <li class="btn-list">   <%= link_to "いいねした投稿",'#', class: "link"%>
+          <% if user_signed_in? && current_user.id == @user.id%>
+            <li class="btn-list">   <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link" %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="mypage__right__text">
+      <div class="mypage__right--profile">自己紹介</div>
+      <%= simple_format(@user.profile) %>
+    </div>
+  </div>
+</div>
