@@ -2,7 +2,12 @@
     <% if @comments %>
       <% @comments.each do |comment| %>
         <div class="comment">
-          <%= image_tag "icon.png",class: "comment--user_icon"%>
+          <% if @post.user.image? %>
+            <%= image_tag(@post.user.image.to_s, size: '30x30' ,class: "user-icon")%>
+            <% else %>
+            <%= image_tag('icon.png', size: '30x30')%>
+          <% end %>
+
           <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}", class:'comment--user' %></strong>
           <%= comment.created_at.strftime('%Y/%m/%d %H:%M') %>
           <% if user_signed_in? && current_user.id == comment.user.id %>
