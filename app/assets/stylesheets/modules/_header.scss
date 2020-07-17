@@ -2,39 +2,51 @@
   height: 100px;
   width: 100%;
   background-color: #FF3333	;
-  position: fixed; 
-  top: 0px; 
+  position: fixed;
+  top: 0px;
   z-index: 1;
-  &__contents {
-    width: 70%;
-    height: 70%;
-    margin: 0 auto;
-    margin-top: 15px;
-    position: relative;
+    &__contents {
+      width: 70%;
+      margin: 0 auto;
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-between;
+      &--left {
+        display: flex;
+        font-size: 20px;
+        margin-top: 10px;
+        margin-left: 5px;
+
     }
-  
-  &__title {
-    position: absolute;
-    margin-top: 10px;
-    &--text {
-      text-decoration: none ;
-      color: white;
-      font-size: 35px;
+      &--title--text {
+        font-size: 35px;
+        color: white;
+        text-decoration:none;
+      }
     }
-  }
-  &__contents--left {
-    position: absolute;
-    left: 760px;
-    font-size: 20px;
-    margin-top: 20px;
-  }
-  &--post {
-    text-decoration: none ;
-    color: white;
-    margin-right: 5px;
-    &:hover {
-      opacity: 0.5;
-    }
-    
+}
+.header--post {
+  text-decoration: none ;
+  color: white;
+  margin-right: 5px;
+  &:hover {
+    opacity: 0.5;
   }
 }
+
+
+.search-input {
+  width: 400px;
+  outline: none;
+  border: 1px solid #999;
+  border-radius: 1rem;
+  padding: 5px;
+  margin: 0;
+  vertical-align: middle;
+  margin-top: 10px;
+
+}
+.search-btn {
+  display: none;
+}
+

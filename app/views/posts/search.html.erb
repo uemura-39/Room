@@ -1,0 +1,19 @@
+<div class="contents row">
+  <div class="main-contents">
+    <% @post.each do |post| %>
+      <div class="post-item">
+        <div class="post-image">
+          <%= link_to image_tag(post.image.to_s,size: '300x300'), post%>
+        </div>
+        <div class="post-nav">
+          <%= image_tag "icon.png",class: "user_icon-mini"%>
+          <%# 上部はuserのアイコンを登録できる様にしたら変更する %>
+          <%= link_to post.user.nickname, post.user, class: 'post-nav-user' %>
+          <div class='post-category'>カテゴリー:◯◯</div>
+          <%# 上部はカテゴリー機能を追加したら変更する %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
