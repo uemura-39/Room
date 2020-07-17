@@ -7,9 +7,9 @@
         </div>
         <div class="post-nav">
         <% if post.user.image? %>
-        <%= image_tag(post.user.image.to_s, size: '25x25' ,class: "user-icon")%>
+        <%= image_tag(post.user.image.to_s, size: '30x30' ,class: "user-icon")%>
         <% else %>
-        <%= image_tag('icon.png', size: '25x25')%>
+        <%= image_tag('icon.png', size: '30x30')%>
         <% end %>
           <%# 上部はuserのアイコンを登録できる様にしたら変更する %>
           <%= link_to post.user.nickname, post.user, class: 'post-nav-user' %>
