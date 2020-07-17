@@ -1,9 +1,12 @@
 <div class="mypage">
   <div class="mypage__left">
     <div class="mypage__left--top"><%= @user.nickname %>さんのフォロー一覧</div>
+    <hr>
     <% @users.each do |user| %>
-    <%= link_to user.nickname, user_path(user.id) %>
-    <% end %>
+      <%= image_tag('icon.png', size: '70x70',class: 'follow-icon')%>
+      <%= link_to user.nickname, user_path(user.id), class: "follow-user" %>
+      <hr>
+      <% end %>
   </div>
   <div class="mypage__right">
     <div class="mypage__right__top">
