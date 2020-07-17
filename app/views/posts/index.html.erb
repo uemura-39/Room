@@ -6,7 +6,11 @@
           <%= link_to image_tag(post.image.to_s,size: '300x300'), post%>
         </div>
         <div class="post-nav">
-          <%= image_tag "icon.png",class: "user_icon-mini"%>
+        <% if post.user.image? %>
+        <%= image_tag(post.user.image.to_s, size: '30x30' ,class: "user-icon")%>
+        <% else %>
+        <%= image_tag('icon.png', size: '30x30')%>
+        <% end %>
           <%# 上部はuserのアイコンを登録できる様にしたら変更する %>
           <%= link_to post.user.nickname, post.user, class: 'post-nav-user' %>
           <div class='post-category'>カテゴリー:◯◯</div>

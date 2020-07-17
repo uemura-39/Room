@@ -9,10 +9,9 @@
     <div class="mypage__right__top">
       <div class="mypage__right__top--icon">
       <% if @user.image? %>
-      <%= image_tag('icon.png', size: '70x70')%>
-      <br>ture
+      <%= image_tag(@user.image.to_s, size: '80x80' ,class: "user-icon")%>
       <% else %>
-      <%= image_tag('icon.png', size: '70x70')%>
+      <%= image_tag('icon.png', size: '80x80')%>
       <% end %>
       </div>
       <div class="mypage__right__top--name">
