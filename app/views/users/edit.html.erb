@@ -2,8 +2,10 @@
   <div class="edit__title">プロフィールを編集する</div>
     <%= form_for @user do |f| %>
       <div class="edit__form">
-        <div><%= f.label :image, class: 'image-nav' %>
-            <%= f.file_field :image %>
+        <div>
+            <%= f.label :image, class: 'fa fa-camera fa-5x ' do %>
+            <%= f.file_field :image, style: "display: none;" %>
+            <% end %>
         </div>
 
 
