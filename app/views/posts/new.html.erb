@@ -16,7 +16,7 @@
       <div class='category-box'>
         <div class='posts-title'>カテゴリーを選択する</div >
         <div class= 'required'>※必須です</div>
-        <div class='show-text'>1つだけ選択して下さい</div>
+        <div class='show-text'>該当するカテゴリーを選択下さい</div>
       </div>
       <div class='comment-box'>
         <div class='posts-title'>コメントを入力して下さい</div>
@@ -33,6 +33,14 @@
         </div>
         <div class="category-box-left">
           <%# ここにカテゴリー送信フォームを実装予定 %>
+
+          <%= form.label :category%>
+          <%= form.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %>
+            <%= category.label do %>
+              <%= category.check_box %>
+              <%= category.text %>
+            <% end %>
+          <% end %>
         </div>
         <div class="comment-text">
           <%= form.text_area :text, placeholder: "コメントを入力する" , size: "40x5", maxlength: "200", class: "comment-area" %>
