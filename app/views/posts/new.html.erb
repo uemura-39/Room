@@ -33,14 +33,15 @@
         </div>
         <div class="category-box-left">
           <%# ここにカテゴリー送信フォームを実装予定 %>
-
-          <%= form.label :category%>
-          <%= form.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %>
-            <%= category.label do %>
-              <%= category.check_box %>
-              <%= category.text %>
+          <div class="category-box-left-text">
+            <%= form.label :category,class:'category-label'%>
+            <%= form.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %>
+              <%= category.label do %>
+                <%= category.check_box %>
+                <%= category.text %>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
         </div>
         <div class="comment-text">
           <%= form.text_area :text, placeholder: "コメントを入力する" , size: "40x5", maxlength: "200", class: "comment-area" %>
