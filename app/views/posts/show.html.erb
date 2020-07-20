@@ -38,12 +38,15 @@
         <% end %>
     </div>
       <%= @post.likes.count %>人がいいねしています
+
     <div class="post__show__right__category">
-      カテゴリー<br>
-      〇〇
-      <%# 上記にカテゴリーを表示する %>
+      <div class="show-text">カテゴリー</div>
+      <% @post.categories.each do |category| %>
+      <span class="show-category"><%= category.name %></span>
+      <% end %>
     </div>
-      紹介文
+
+      <div class="show-text">紹介文</div>
     <div class="post__show__right__text">
       <%= simple_format(@post.text) %>
     </div>
