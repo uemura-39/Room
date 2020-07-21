@@ -24,5 +24,9 @@ class User < ApplicationRecord
   def followed_by?(user)
     passive_relationships.find_by(following_id: user.id).present?
   end
+
+  validates :profile, length: { maximum: 150 }
+  validates :nickname, presence: true, length: { maximum: 6 }
+
   mount_uploader :image, ImageUploader
 end

@@ -21,6 +21,7 @@ class Post < ApplicationRecord
 
   validates :text, presence: true,length: { maximum: 200 }
   validates :image, presence: true
+  validates :categories, presence: true
 
   mount_uploader :image, ImageUploader
 end
