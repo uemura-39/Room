@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   has_many :comments
   has_many :likes
   has_many :post_category_relations
-  has_many :categories, through: :post_category_relations
+  has_many :categories, through: :post_category_relations, dependent: :destroy
 
   # お気に入りされているか判定
   def liked_by?(user)

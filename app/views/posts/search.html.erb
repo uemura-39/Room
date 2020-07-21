@@ -6,14 +6,24 @@
           <%= link_to image_tag(post.image.to_s,size: '300x300'), post%>
         </div>
         <div class="post-nav">
-          <%= image_tag "icon.png",class: "user_icon-mini"%>
-          <%# 上部はuserのアイコンを登録できる様にしたら変更する %>
+          <% if post.user.image? %>
+          <%= image_tag(post.user.image.to_s, size: '30x30' ,class: "user-icon")%>
+          <% else %>
+          <%= image_tag('icon.png', size: '30x30')%>
+          <% end %>
+
           <%= link_to post.user.nickname, post.user, class: 'post-nav-user' %>
-          <div class='post-category'>カテゴリー:◯◯</div>
-          <%# 上部はカテゴリー機能を追加したら変更する %>
+          <div class="post-nav-icon">
+            <div><%= post.created_at.strftime('%Y/%m/%d %H:%M') %></div>
+            <ul>
+              <li class="fa fa-heart post-right" ><%= post.likes.count %></li>
+              <li class="fa fa-comments post-right" ><%= post.comments.count %></li>
+            </ul>
+          </div>
         </div>
       </div>
     <% end %>
   </div>
 </div>
+
 
