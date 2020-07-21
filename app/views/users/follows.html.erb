@@ -3,10 +3,10 @@
     <div class="mypage__left--top"><%= @user.nickname %>さんのフォロー一覧</div>
     <hr>
     <% @users.each do |user| %>
-      <% if @user.image %>
-      <%= image_tag(user.image.to_s, size: '80x80' ,class: "user-icon")%>
+      <% if user.image? %>
+        <%= image_tag(user.image.to_s, size: '80x80' ,class: "user-icon")%>
       <% else %>
-      <%= image_tag('icon.png', size: '80x80')%>
+          <%= image_tag("icon.png", size: "80x80")%>
       <% end %>
       <%= link_to user.nickname, user_path(user.id), class: "follow-user" %>
       <hr>
