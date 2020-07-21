@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :follows, :followers, :likes]
   # before_action :move_to_mypage, only: [:edit, :update]
 
   def show
@@ -19,19 +19,16 @@ class UsersController < ApplicationController
   end
 
   def follows
-    @user = User.find(params[:id])
     user = User.find(params[:id])
     @users = user.followings
   end
 
   def followers
-    @user = User.find(params[:id])
     user = User.find(params[:id])
     @users = user.followers
   end
 
   def likes
-    @user = User.find(params[:id])
     @like_posts = @user.like_posts.order("created_at Desc")
   end
 
