@@ -75,7 +75,6 @@ gem 'sprockets', '3.7.2'
 gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'fog-aws'
 gem 'font-awesome-rails'
 gem "jquery-rails"
 gem 'rubocop', require: false
