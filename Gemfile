@@ -72,3 +72,6 @@ gem 'font-awesome-rails'
 gem "jquery-rails"
 gem 'rubocop', require: false
 
+group :production, :staging do
+    gem 'unicorn'
+end
