@@ -1,4 +1,6 @@
 version: 2
+orbs:
+  ruby: circleci/ruby@0.1.2
 jobs:
   deploy:
     machine:
@@ -6,7 +8,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "xxxxxxxxxxxxxxxxxxxxxxxxxxx" #上記メモったハッシュを指定
+            - "0d:26:ad:57:1a:4b:6d:b4:e6:c5:24:a9:0e:73:2e:7a" #上記メモったハッシュを指定
       - run: ssh -p $SSH_PORT $SSH_USER@$SSH_HOST "/var/www/Room/deploy-me.sh"
  
 workflows:
