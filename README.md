@@ -9,7 +9,7 @@
 ・Ruby 2.5.1   
 ・Rails 5.2.3  
 ・MySQL  
-・AWS(EC2、Route53)  
+・AWS(EC2、Route53、ALB、ACM)  
 ・circleci
 
 # ER図
