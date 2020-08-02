@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cd /var/www/rails/Room/ && git pull && bundle install
+cd /var/www/rails/Room/ && git pull && /home/keita/.rbenv/shims/bundle install
