@@ -6,7 +6,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "5a:a9:09:3d:a7:df:bb:55:87:21:36:a8:15:6a:dd:58" #上記メモったハッシュを指定
+            - "2c:71:cb:04:be:41:4a:7e:d6:98:fc:25:48:94:3f:ba" #上記メモったハッシュを指定
       - run: ssh -p $SSH_PORT $SSH_USER@$SSH_HOST "/var/www/rails/Room/deploy.sh"
 
 workflows:
