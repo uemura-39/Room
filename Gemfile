@@ -71,6 +71,7 @@ gem 'mini_magick'
 gem 'font-awesome-rails'
 gem "jquery-rails"
 gem 'rubocop', require: false
+gem 'kaminari'
 
 group :production, :staging do
     gem 'unicorn'
