@@ -10,6 +10,8 @@
 ・Rails 5.2.3  
 ・MySQL  
 ・AWS(EC2、Route53、ALB、ACM)  
+・nginx  
+・unicorn  
 ・circleci
 
 # ER図
@@ -34,9 +36,7 @@
 
 
 # 今後実装したい機能
-・レスポンシブ対応  
-・テストコードを充実させる  
-・
+issueにて管理
 
 # 参考アプリケーション
 
