@@ -22,6 +22,8 @@ https://ro-om.work/
 # ER図
 
 # AWS構成図
+![Untitled Diagram-Page-2](https://user-images.githubusercontent.com/51046591/89529053-08222100-d827-11ea-81eb-ae07a7daa7bd.png)
+
 
 # 機能一覧
 ・ユーザー機能  
