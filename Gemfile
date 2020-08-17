@@ -74,5 +74,5 @@ gem 'rubocop', require: false
 gem 'kaminari'
 
 group :production, :staging do
-    gem 'unicorn'
+    gem 'unicorn', '5.4.1'
 end
